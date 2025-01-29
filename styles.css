@@ -1,114 +1,74 @@
-:root {
-    --heart-color: #141314;
-    --hover-color: #C1275C;
-    --background-color: #ebc8c0;
-    --white: #fff;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: var(--background-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-direction: column;
-    color: var(--heart-color);
-    background-image: url('images/mini-heart.png');
-    background-size: 50%;
-}
-
-.card {
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    width: 700px;
-}
-
-.title {
-    font-size: 44px;
-    margin-top: 0;
-}
-
-.heart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-.button {
-    background-color: var(--heart-color);
-    color: var(--white);
-    border: none;
-    padding: 14px 90px;
-    font-size: 16px;
-    margin: 40px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.button#noButton {
-    background-color: var(--white);
-    color: var(--heart-color);
-    border: 0.5px solid var(--heart-color);
-}
-
-.button#resetButton {
-    display: none;
-}
-
-.text {
-    font-size: 40px;
-    margin-top: 30px;
-}
-
-.cat {
-    display: block;
-    margin: auto; 
-    max-width: 100%; 
-    height: auto;
-}
 /* Estilo general */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    
+    mar
+margin: 0;
+    
+    
+padding: 0;
     background-color: #f5f5f5;
 }
 
 /* Contenedor principal */
+
+.
 .container {
     text-align: center;
-    padding: 20px;
+    
+    pa
+padding: 20px;
 }
 
+/* Título */
 .title {
-    font-size: 2.5em;
+    
+    fo
+font-size: 2.5em;
     color: #333;
 }
 
+/* Texto */
 .text {
-    font-size: 1.5em;
-    color: #555;
+    
+ 
+font-size: 1.5em;
+    
+    co
+color: #555;
 }
 
-/* Ajuste de las imágenes para ser responsivas */
+/* Estilo de las imágenes para ser responsivas */
 .cat {
-    max-width: 100%;
-    height: auto;
+    
+    max-wid
+max-width: 100%;
+    
+ 
+height: auto;
     margin: 20px 0;
 }
 
+
+}
 /* Estilo de los botones */
+
+butt
 button {
     font-size: 1.2em;
-    padding: 10px 20px;
-    margin: 10px;
+    
+    
+padding: 10px 20px;
+    
+    marg
+margin: 10px;
     cursor: pointer;
     background-color: #ff6347;
     color: white;
     border: none;
-    border-radius: 5px;
+    
+    bord
+border-radius: 5px;
 }
 
 button:hover {
@@ -118,20 +78,34 @@ button:hover {
 /* Meta etiqueta viewport para asegurar la vista responsiva */
 @media screen and (max-width: 768px) {
     .title {
-        font-size: 2em; /* Reducimos el tamaño del título en pantallas pequeñas */
+        
+       
+font-size: 2em; /* Reducimos el tamaño del título en pantallas pequeñas */
     }
 
     .text {
-        font-size: 1.2em; /* Reducimos el tamaño del texto */
+        
+        
+font-size: 1.2em; /* Reducimos el tamaño del texto */
     }
 
-    button {
-        font-size: 1em; /* Reducimos el tamaño de los botones */
-        padding: 8px 16px;
+    
+    }
+
+    bu
+button {
+        
+        fon
+font-size: 1em; /* Reducimos el tamaño de los botones */
+        
+   
+padding: 8px 16px;
     }
 
     .cat {
-        max-width: 90%; /* Ajustamos las imágenes para que no se salgan de la pantalla */
+        
+    
+max-width: 90%; /* Ajustamos las imágenes para que no se salgan de la pantalla */
         margin: 10px 0;
     }
 }
@@ -146,13 +120,22 @@ button:hover {
         font-size: 1em; /* Reducimos el tamaño del texto */
     }
 
-    button {
-        font-size: 0.9em; /* Aún más pequeño para los botones */
-        padding: 7px 14px;
+    
     }
 
-    .cat {
+button {
+        font-size: 0.9em; /* Aún más pequeño para los botones */
+        
+  
+padding: 7px 14px;
+    }
+
+    
+   
+.cat {
         max-width: 100%; /* Las imágenes se adaptan completamente */
-        margin: 5px 0;
+        
+        
+margin: 5px 0;
     }
 }
