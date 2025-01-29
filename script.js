@@ -40,7 +40,7 @@ noButton.addEventListener('click', () => {
     count++;
     noClickCount++; // Aumentamos el contador de clics en NO
 
-    if (noClickCount >= 200) {
+    if (noClickCount >= 150) {
         updateDisplay(areYouOk); // Mostramos el nuevo GIF y mensaje
         noButton.style.display = 'none'; // Ocultamos el botón NO
         yesButton.style.display = 'none'; // Ocultamos el botón SÍ
