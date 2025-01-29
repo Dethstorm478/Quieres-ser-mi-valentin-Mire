@@ -1,141 +1,134 @@
-/* Estilo general */
+:root {
+    --heart-color: #141314;
+    --hover-color: #C1275C;
+    --background-color: #ebc8c0;
+    --white: #fff;
+}
+
 body {
     font-family: Arial, sans-serif;
-    
-    mar
-margin: 0;
-    
-    
-padding: 0;
-    background-color: #f5f5f5;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    color: var(--heart-color);
+    background-image: url('images/mini-heart.png');
+    background-size: 50%;
+    margin: 0;
 }
 
-/* Contenedor principal */
-
-.
-.container {
+/* Estilo para el contenedor de la tarjeta */
+.card {
+    border-radius: 15px;
+    padding: 30px;
     text-align: center;
-    
-    pa
-padding: 20px;
+    width: 700px;
+    box-sizing: border-box;
 }
 
-/* Título */
+/* Estilo para el título */
 .title {
-    
-    fo
-font-size: 2.5em;
-    color: #333;
+    font-size: 44px;
+    margin-top: 0;
 }
 
-/* Texto */
-.text {
-    
- 
-font-size: 1.5em;
-    
-    co
-color: #555;
+/* Estilo para el contenedor del corazón */
+.heart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
 
-/* Estilo de las imágenes para ser responsivas */
-.cat {
-    
-    max-wid
-max-width: 100%;
-    
- 
-height: auto;
-    margin: 20px 0;
-}
-
-
-}
 /* Estilo de los botones */
-
-butt
-button {
-    font-size: 1.2em;
-    
-    
-padding: 10px 20px;
-    
-    marg
-margin: 10px;
-    cursor: pointer;
-    background-color: #ff6347;
-    color: white;
+.button {
+    background-color: var(--heart-color);
+    color: var(--white);
     border: none;
-    
-    bord
-border-radius: 5px;
+    padding: 14px 90px;
+    font-size: 16px;
+    margin: 40px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #ff4500;
+.button:hover {
+    background-color: var(--hover-color);
 }
 
-/* Meta etiqueta viewport para asegurar la vista responsiva */
+.button#noButton {
+    background-color: var(--white);
+    color: var(--heart-color);
+    border: 0.5px solid var(--heart-color);
+}
+
+.button#resetButton {
+    display: none;
+}
+
+/* Estilo para el texto */
+.text {
+    font-size: 40px;
+    margin-top: 30px;
+}
+
+/* Estilo de la imagen del gato */
+.cat {
+    display: block;
+    margin: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Media query para pantallas medianas (tabletas) */
 @media screen and (max-width: 768px) {
+    .card {
+        width: 90%; /* Ajusta el ancho de la tarjeta a un 90% en pantallas más pequeñas */
+        padding: 20px;
+    }
+
     .title {
-        
-       
-font-size: 2em; /* Reducimos el tamaño del título en pantallas pequeñas */
+        font-size: 32px; /* Reduce el tamaño del título */
+    }
+
+    .button {
+        font-size: 14px; /* Ajusta el tamaño de los botones */
+        padding: 12px 60px;
     }
 
     .text {
-        
-        
-font-size: 1.2em; /* Reducimos el tamaño del texto */
+        font-size: 32px; /* Ajusta el tamaño del texto */
+    }
+}
+
+/* Media query para pantallas pequeñas (teléfonos móviles) */
+@media screen and (max-width: 480px) {
+    body {
+        background-size: 70%; /* Aumenta el tamaño de la imagen de fondo en pantallas pequeñas */
     }
 
-    
+    .card {
+        width: 90%; /* Ajusta el ancho de la tarjeta a un 90% */
+        padding: 15px;
     }
 
-    bu
-button {
-        
-        fon
-font-size: 1em; /* Reducimos el tamaño de los botones */
-        
-   
-padding: 8px 16px;
+    .title {
+        font-size: 28px; /* Reduce aún más el tamaño del título */
+    }
+
+    .text {
+        font-size: 28px; /* Ajusta el tamaño del texto */
+    }
+
+    .button {
+        font-size: 14px; /* Ajusta el tamaño de los botones */
+        padding: 12px 50px;
     }
 
     .cat {
-        
-    
-max-width: 90%; /* Ajustamos las imágenes para que no se salgan de la pantalla */
-        margin: 10px 0;
-    }
-}
-
-/* Para dispositivos más pequeños, como teléfonos */
-@media screen and (max-width: 480px) {
-    .title {
-        font-size: 1.8em; /* Reducimos aún más el tamaño del título */
-    }
-
-    .text {
-        font-size: 1em; /* Reducimos el tamaño del texto */
-    }
-
-    
-    }
-
-button {
-        font-size: 0.9em; /* Aún más pequeño para los botones */
-        
-  
-padding: 7px 14px;
-    }
-
-    
-   
-.cat {
-        max-width: 100%; /* Las imágenes se adaptan completamente */
-        
-        
-margin: 5px 0;
+        max-width: 80%; /* Ajusta la imagen del gato a un 80% del contenedor */
     }
 }
