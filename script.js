@@ -58,7 +58,7 @@ const playPauseButton = document.getElementById("playPauseButton");
 const audioSource = document.getElementById("audioSource");
 
 // Lista de canciones (agrega más si quieres)
-const playlist = ["images/cancion.mp3", "images/cancion1.mp3", "images/tu-cancion.mp3"];
+const playlist = ["images/cancion.mp3", "images/cancion1.mp3", "images/tu-cancion.mp3", "images/cancion2.mp3", "images/cancion3.mp3", "images/cancion4.mp3", "images/cancion5.mp3", "images/cancion6.mp3", "images/cancion6.5.mp3", "images/cancion7.mp3", "images/cancion8.mp3", "images/cancion8.5.mp3", "images/cancion9.mp3", "images/cancion10.mp3", "images/cancion11.mp3", "images/cancion12.mp3", "images/cancion13.mp3", "images/cancion14.mp3"];
 let currentSongIndex = 0;
 let clickCount = 0;
 let clickTimer;
