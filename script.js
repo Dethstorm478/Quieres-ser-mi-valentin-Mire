@@ -11,7 +11,7 @@ const alternatives = [
     { text: "La unica opcion es que digas que si", image: "images/cat-10.gif" }   // Nuevo
 ];
 
-const ohYes = { text: "Sabía que aceptarías", image: "images/cat-yes.gif" };
+const ohYes = { text: "Sabía que aceptarías <3", image: "images/cat-yes.gif" };
 const areYouOk = { text: "JUM esta bien no quieres, entiendo :(", image: "images/cat-ok.gif" }; // Nuevo GIF
 
 const title = document.querySelector('.title');
