@@ -53,31 +53,3 @@ noButton.addEventListener('click', () => {
         }
     }
 });
-// Configuración de Firebase (reemplaza con tus datos)
-const firebaseConfig = {
-    apiKey: "AIzaSyD1Br2W5JStFT4Ohb32GWCywkEeeaA0AmQ",
-    authDomain: "project-2459976473523716361.firebaseapp.com",
-    projectId: "project-2459976473523716361",
-    storageBucket: "project-2459976473523716361.firebasestorage.app",
-    messagingSenderId: "156686523631",
-    appId: "1:156686523631:web:da97e9886ab549c881cf1a"
-};
-
-// Inicializar Firebase
-firebase.initializeApp(firebaseConfig);
-
-// Inicializar Firestore
-const db = firebase.firestore();
-
-// Botón "Sí"
-const yesButton = document.getElementById('yesButton');
-
-yesButton.addEventListener('click', async () => {
-    await db.collection("clicks").add({
-        clickedYes: true,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
-    });
-
-    alert("¡Tu clic fue registrado!");
-});
-
