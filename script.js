@@ -53,4 +53,48 @@ noButton.addEventListener('click', () => {
         }
     }
 });
+const audio = document.getElementById("music");
+const playPauseButton = document.getElementById("playPauseButton");
+const audioSource = document.getElementById("audioSource");
 
+// Lista de canciones (agrega más si quieres)
+const playlist = ["images/tu-cancion.mp3", "images/cancion.mp3", "images/cancion1.mp3"];
+let currentSongIndex = 0;
+let clickCount = 0;
+let clickTimer;
+
+// Función para alternar Play/Pause
+function togglePlayPause() {
+    if (audio.paused) {
+        audio.play();
+        playPauseButton.src = "images/Capi.jpg"; // Imagen de pausa
+    } else {
+        audio.pause();
+        playPauseButton.src = "images/Capi.jpg"; // Imagen de play
+    }
+}
+
+// Función para cambiar de canción
+function changeSong() {
+    currentSongIndex = (currentSongIndex + 1) % playlist.length;
+    audioSource.src = playlist[currentSongIndex];
+    audio.load();
+    audio.play();
+    playPauseButton.src = "images/Capi.jpg"; // Mantener la imagen en "pause"
+}
+
+// Manejo de clics
+playPauseButton.addEventListener("click", () => {
+    clickCount++;
+
+    if (clickCount === 1) {
+        clickTimer = setTimeout(() => {
+            togglePlayPause();
+            clickCount = 0;
+        }, 300); // Espera 300ms para detectar si es doble clic
+    } else if (clickCount === 2) {
+        clearTimeout(clickTimer);
+        changeSong();
+        clickCount = 0;
+    }
+});
