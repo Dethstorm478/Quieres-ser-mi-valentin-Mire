@@ -134,10 +134,10 @@ body {
 }
 #playButton {
   position: absolute; /* Posición absoluta para moverla */
-  left: 20px; /* Distancia desde el borde izquierdo */
-  top: 50%; /* Centrado verticalmente */
+  left: 50px; /* Distancia desde el borde izquierdo */
+  top: 30%; /* Centrado verticalmente */
   transform: translateY(-50%); /* Ajuste preciso para centrar verticalmente */
-  width: 50px; /* Ajusta el tamaño de la imagen */
+  width: 70px; /* Ajusta el tamaño de la imagen */
   height: auto; /* Mantén las proporciones */
   transition: transform 0.2s ease; /* Transición suave para el efecto */
 }
