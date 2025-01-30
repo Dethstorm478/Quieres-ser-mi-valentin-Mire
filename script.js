@@ -53,16 +53,21 @@ noButton.addEventListener('click', () => {
         }
     }
 });
-document.getElementById('playButton').onclick = function() {
-  var music = document.getElementById('music');
-  var content = document.getElementById('content');
+document.addEventListener("DOMContentLoaded", function() {
+  var music = document.getElementById("music");
+  var playPauseButton = document.getElementById("playPauseButton");
 
-  // Reproducir la música
-  music.play();
+  var isPlaying = false; // Estado de la música
 
-  // Mostrar el contenido
-  content.style.display = 'block';
+  playPauseButton.onclick = function() {
+    if (isPlaying) {
+      music.pause();
+      playPauseButton.src = "play.png"; // Imagen de Play
+    } else {
+      music.play();
+      playPauseButton.src = "pause.png"; // Imagen de Pause
+    }
+    isPlaying = !isPlaying; // Cambia el estado
+  };
+});
 
-  // Ocultar la imagen después de hacer clic
-  document.getElementById('playButton').style.display = 'none';
-};
