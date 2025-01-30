@@ -62,10 +62,10 @@ document.addEventListener("DOMContentLoaded", function() {
   playPauseButton.onclick = function() {
     if (isPlaying) {
       music.pause();
-      playPauseButton.src = "play.png"; // Imagen de Play
+      playPauseButton.src = "Capi.png"; // Imagen de Play
     } else {
       music.play();
-      playPauseButton.src = "pause.png"; // Imagen de Pause
+      playPauseButton.src = "Capi.png"; // Imagen de Pause
     }
     isPlaying = !isPlaying; // Cambia el estado
   };
