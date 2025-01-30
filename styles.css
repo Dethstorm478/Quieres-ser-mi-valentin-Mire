@@ -132,3 +132,16 @@ body {
         max-width: 80%; /* Ajusta la imagen del gato a un 80% del contenedor */
     }
 }
+#playButton {
+  width: 30px; /* Ajusta el tamaño de la imagen */
+  height: auto; /* Mantén las proporciones */
+  transition: transform 0.2s ease; /* Transición suave para el efecto */
+}
+
+#playButton:hover {
+  transform: scale(1.1); /* Agrandar la imagen cuando el ratón pasa por encima */
+}
+
+#playButton:active {
+  transform: scale(0.9); /* Reducir la imagen cuando se hace clic */
+}
