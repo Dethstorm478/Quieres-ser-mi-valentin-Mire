@@ -132,7 +132,7 @@ body {
         max-width: 80%; /* Ajusta la imagen del gato a un 80% del contenedor */
     }
 }
-#playButton {
+#playPauseButton {
     position: absolute; /* Posición absoluta para moverla */
   top: 93%; /* Centrado verticalmente */
   transform: translateY(-50%); /* Ajuste preciso para centrar verticalmente */
