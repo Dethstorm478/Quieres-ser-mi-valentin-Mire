@@ -98,4 +98,3 @@ playPauseButton.addEventListener("click", () => {
         clickCount = 0;
     }
 });
-
