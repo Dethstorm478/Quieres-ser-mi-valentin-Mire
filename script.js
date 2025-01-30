@@ -62,30 +62,22 @@ const firebaseConfig = {
     messagingSenderId: "156686523631",
     appId: "1:156686523631:web:da97e9886ab549c881cf1a"
 };
+
 // Inicializar Firebase
 firebase.initializeApp(firebaseConfig);
+
+// Inicializar Firestore
 const db = firebase.firestore();
 
+// Botón "Sí"
 const yesButton = document.getElementById('yesButton');
-const noButton = document.getElementById('noButton');
 
-// Contador de clics en "Sí"
 yesButton.addEventListener('click', async () => {
     await db.collection("clicks").add({
         clickedYes: true,
         timestamp: firebase.firestore.FieldValue.serverTimestamp()
     });
 
-    alert("¡Gracias por aceptar! 🎉 Tu clic ha sido registrado.");
+    alert("¡Tu clic fue registrado!");
 });
-
-// Función para contar cuántas personas han hecho clic en "Sí"
-async function checkClicks() {
-    const snapshot = await db.collection("clicks").get();
-    console.log(`Número de personas que hicieron clic en SÍ: ${snapshot.size}`);
-}
-
-// Ejecutar cada 5 segundos para ver actualizaciones en la consola
-setInterval(checkClicks, 5000);
-
 
