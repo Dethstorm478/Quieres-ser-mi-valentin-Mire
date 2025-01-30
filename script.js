@@ -53,3 +53,16 @@ noButton.addEventListener('click', () => {
         }
     }
 });
+document.getElementById('playButton').onclick = function() {
+  var music = document.getElementById('music');
+  var content = document.getElementById('content');
+
+  // Reproducir la música
+  music.play();
+
+  // Mostrar el contenido
+  content.style.display = 'block';
+
+  // Ocultar la imagen después de hacer clic
+  document.getElementById('playButton').style.display = 'none';
+};
