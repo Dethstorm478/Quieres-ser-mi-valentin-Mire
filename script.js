@@ -22,7 +22,6 @@ const noButton = document.getElementById('noButton');
 
 let count = 0;
 let noClickCount = 0; // Contador de clics en el botón NO
-let yesClickCount = 0; // Contador de clics en el botón SÍ
 
 function updateDisplay(item) {
     cat.src = item.image;
@@ -34,15 +33,12 @@ yesButton.addEventListener('click', () => {
     updateDisplay(ohYes);
     yesButton.style.display = 'none';
     noButton.style.display = 'none';
-    console.log(`Clics en SÍ: ${yesClickCount}`); // Para depuración
 });
 
 // Al hacer clic en "NO"
 noButton.addEventListener('click', () => {
     count++;
     noClickCount++; // Aumentamos el contador de clics en NO
-
-    console.log(`Clics en NO: ${noClickCount}`); // Para depuración
 
     if (noClickCount >= 150) {
         updateDisplay(areYouOk); // Mostramos el nuevo GIF y mensaje
@@ -56,14 +52,39 @@ noButton.addEventListener('click', () => {
             updateDisplay(alternatives[count]);
         }
     }
+// Configuración de Firebase (reemplaza con tus datos)
+const firebaseConfig = {
+    apiKey: "AIzaSyD1Br2W5JStFT4Ohb32GWCywkEeeaA0AmQ",
+    authDomain: "project-2459976473523716361.firebaseapp.com",
+    projectId: "project-2459976473523716361",
+    storageBucket: "project-2459976473523716361.firebasestorage.app",
+    messagingSenderId: "156686523631",
+    appId: "1:156686523631:web:da97e9886ab549c881cf1a"
+};
+// Inicializar Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+const yesButton = document.getElementById('yesButton');
+const noButton = document.getElementById('noButton');
+
+// Contador de clics en "Sí"
+yesButton.addEventListener('click', async () => {
+    await db.collection("clicks").add({
+        clickedYes: true,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+    });
+
+    alert("¡Gracias por aceptar! 🎉 Tu clic ha sido registrado.");
 });
-function checkClicks() {
-    if (yesClickCount > 0) {
-        console.log("El botón SÍ fue presionado al menos una vez.");
-    } else if (noClickCount >= 150) {
-        console.log("El botón NO fue presionado 150 veces.");
-    }
+
+// Función para contar cuántas personas han hecho clic en "Sí"
+async function checkClicks() {
+    const snapshot = await db.collection("clicks").get();
+    console.log(`Número de personas que hicieron clic en SÍ: ${snapshot.size}`);
 }
 
-// Llamar a la función para verificar los clics
-setInterval(checkClicks, 1000); // Cada segundo verificamos el estado de los clics
+// Ejecutar cada 5 segundos para ver actualizaciones en la consola
+setInterval(checkClicks, 5000);
+
+});
