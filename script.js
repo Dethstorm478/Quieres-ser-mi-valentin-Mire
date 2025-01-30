@@ -52,6 +52,7 @@ noButton.addEventListener('click', () => {
             updateDisplay(alternatives[count]);
         }
     }
+});
 // Configuración de Firebase (reemplaza con tus datos)
 const firebaseConfig = {
     apiKey: "AIzaSyD1Br2W5JStFT4Ohb32GWCywkEeeaA0AmQ",
@@ -87,4 +88,4 @@ async function checkClicks() {
 // Ejecutar cada 5 segundos para ver actualizaciones en la consola
 setInterval(checkClicks, 5000);
 
-});
+
